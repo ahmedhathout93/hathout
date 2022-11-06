@@ -1,0 +1,149 @@
+/* start global rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: #ececec;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family:"Cairo" , sans-serif;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+/* Small */
+@media (min-width: 768px) {
+.container {
+    width: 750px;
+}
+}
+/* Medium */
+@media (min-width: 992px) {
+.container {
+    width: 970px;
+}
+}
+/* Large */
+@media (min-width: 1200px) {
+.container {
+    width: 1170px;
+}
+}
+/* start header */
+.header {
+    background-color: white;
+    position: relative;
+    box-shadow:0 0 10px #ddd ;
+
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.header .logo{
+height: 72px;
+color: var(--main-color);
+align-items: center;
+justify-content: center;
+display: flex;
+font-size: 26px;
+font-weight: bold;
+}
+.header .main-nav  {
+    display: flex;
+}
+.header .main-nav > li> a  {
+    padding: 30px;
+    color: black;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 18px;
+    overflow: hidden;
+    transition-duration: var(--main-transition);
+}
+.header .main-nav > li > a:hover{
+    background-color: #fafafa;
+    color: var(--main-color);
+}
+.header .main-nav > li> a::before{
+    content: "";
+    height: 4px;
+    width: 100%;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+.header .main-nav > li> a:hover::before{
+    left: 0;
+}
+.header .mega-menu{
+    width: 100%;
+    display: flex;
+    background-color: white;
+    position: absolute;
+    left:0;
+    top: calc(100% + 50px);
+    padding: 30px;
+    gap: 40px;
+    border-bottom: 3px solid var(--main-color);
+    opacity: 0;
+    transition: top var(--main-transition), opacity var(--main-transition);}
+.header .mega-menu .image img{
+    max-width: 100%;
+}
+.header .links {
+    flex: 1;
+    min-width: 250px;
+}
+.header .mega-menu li a {
+    padding: 15px;
+    color: var(--main-color);
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+}
+.header .mega-menu li a i {
+margin-right: 10px;
+}
+.header .mega-menu li:not(:last-child){
+    border-bottom: 1px solid #ccc;
+}
+.header .main-nav > li:hover .mega-menu {
+    opacity: 1;
+    z-index: 100;
+    top: calc(100% + 1px);
+}   
+
+
+/* end header */
