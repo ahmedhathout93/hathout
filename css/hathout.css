@@ -222,6 +222,7 @@ padding-bottom: 120px;
 .landing .image img {
     width: 600px;
     position: relative;
+    animation: MoveUpDown 5s linear infinite ;
 }
 @media(max-width:992px){
     .landing .image  {
@@ -250,9 +251,48 @@ padding-bottom: 120px;
         color: #666;
         max-width: 500px;
 }
+@media(max-width:767px){
+    .landing .text h1{
+    font-size: 28px;
+    }
+    .landing .text p {
+    font-size: 18px;
+    }
+}
 @media(max-width:992px){
     .landing .text p {
         margin: 10px auto;
+    }
+}
+@keyframes MoveUpDown {
+    0%,100% {
+        top: 0;
+    }
+    50% { 
+        top: -55px;
+}
+}
+.landing .go-down {
+    position: absolute;
+    color: var(--main-color);
+    left:50%;
+    bottom:30px;
+    transform: translateX(-50%);
+    transition: var(--main-transition);
+    animation: bouncing 1.5s infinite;
+}
+@keyframes bouncing {
+    0%,
+    10%,
+    20%,
+    50%,
+    80%,
+    100% {
+    transform: translateY(0);
+    }
+    40%,
+    60% {
+    transform: translateY(-15px);
     }
 }
 /* end landing */
